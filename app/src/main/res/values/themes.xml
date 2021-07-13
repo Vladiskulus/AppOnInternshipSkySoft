@@ -1,4 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Splash" parent="Theme.ProductApp">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.ProductApp</item>
+    </style>
     <!-- Base application theme. -->
     <style name="Theme.ProductApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -9,9 +14,7 @@
         <item name="colorSecondary">@color/card</item>
         <item name="colorSecondaryVariant">@color/background</item>
         <item name="colorOnSecondary">@color/background</item>
-
-    </style>
-    <style name="Splash" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:windowBackground">@drawable/back</item>
+        <!--<item name="android:windowBackground">@drawable/back</item>
+        <item name="statusBarBackground">@color/background</item>-->
     </style>
 </resources>
