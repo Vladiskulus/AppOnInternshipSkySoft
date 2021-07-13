@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">ProductApp</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">email@mail.com</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="go_to_register">Don`t have an account?</string>
+    <string name="go_to_login">Already have an account?</string>
+    <string name="create_new"> Create new one</string>
+    <string name="privacy">By signing up you accept the </string>
+    <string name="term_of_service">Term of service</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="or">or</string>
+    <string name="username">Username</string>
+    <string name="zero_email_and_password">Please enter email and password</string>
+    <string name="facebook">Facebook</string>
+    <string name="google_plus">Google Plus</string>
+    <string name="twitter">Twitter</string>
+    <string name="wrong_email">This mail is not registered!</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="incorrect">Incorrect input</string>
+    <string name="incorrect_email">Incorrect eMail input</string>
+    <string name="incorrect_password">Incorrect password input</string>
+    <!--
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
+    -->
+</resources>
