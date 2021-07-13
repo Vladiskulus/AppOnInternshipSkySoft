@@ -8,7 +8,6 @@ import vn.iambulance.productapp.dbName
 abstract class RoomDB:RoomDatabase() {
 
     companion object{
-
         private var db: RoomDB? = null
         @Synchronized
         fun getData(context: Context?): RoomDB? {
@@ -19,5 +18,6 @@ abstract class RoomDB:RoomDatabase() {
             return db
         }
     }
+
     abstract fun roomDao():RoomDAO?
 }
