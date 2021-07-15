@@ -3,7 +3,6 @@ package vn.iambulance.productapp.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
 import vn.iambulance.productapp.room.RoomDB
@@ -14,8 +13,6 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.Splash)
-        installSplashScreen()
         binding = ActivitySignInBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)

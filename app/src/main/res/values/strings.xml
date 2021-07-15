@@ -23,6 +23,8 @@
     <string name="incorrect">Incorrect input</string>
     <string name="incorrect_email">Incorrect eMail input</string>
     <string name="incorrect_password">Incorrect password input</string>
+    <string name="todo">TODO</string>
+    <string name="and">and</string>
     <!--
     <string name=""></string>
     <string name=""></string>

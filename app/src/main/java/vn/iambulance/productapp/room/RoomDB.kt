@@ -18,6 +18,5 @@ abstract class RoomDB:RoomDatabase() {
             return db
         }
     }
-
     abstract fun roomDao():RoomDAO?
 }

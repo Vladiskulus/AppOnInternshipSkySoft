@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
 
 const val dbName = "users"
+const val eId = "id"
 const val eMail = "email"
 const val eAccount = "account"
 const val ePassword = "password"
