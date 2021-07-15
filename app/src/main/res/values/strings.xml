@@ -21,7 +21,7 @@
     <string name="wrong_email">This mail is not registered!</string>
     <string name="wrong_password">Wrong password</string>
     <string name="incorrect">Incorrect input</string>
-    <string name="incorrect_email">Incorrect eMail input</string>
+    <string name="incorrect_email">Incorrect Email input</string>
     <string name="incorrect_password">Incorrect password input</string>
     <string name="todo">TODO</string>
     <string name="and">and</string>
