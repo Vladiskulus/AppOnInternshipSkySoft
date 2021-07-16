@@ -4,5 +4,4 @@
         android:topLeftRadius="50dp"
         android:bottomLeftRadius="50dp"/>
     <solid android:color="@color/card"/>
-
 </shape>

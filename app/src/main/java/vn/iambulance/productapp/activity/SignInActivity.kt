@@ -7,10 +7,11 @@ import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
 
-class SignInActivity : AppCompatActivity() {
+abstract class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var viewModel: MyViewModel
+    abstract val activity: SignInActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,19 +19,20 @@ class SignInActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
-        binding.also {
-            it.btnSignIn.setOnClickListener { signIn() }
-            it.txtCreateNew.setOnClickListener { this nextActivity SignUpActivity::class.java }
-            it.imgVisibilityPassword.setOnClickListener {
-                binding.imgVisibilityPassword.setImageResource(R.drawable.eye_on)
-                binding.password.inputType = InputType.TYPE_CLASS_TEXT
+        with(binding) {
+            btnSignIn.setOnClickListener { signIn() }
+            txtCreateNew.setOnClickListener { activity nextActivity SignUpActivity::class.java }
+            imgVisibilityPassword.setOnClickListener {
+                this.imgVisibilityPassword.setImageResource(R.drawable.eye_on)
+                this.password.inputType = InputType.TYPE_CLASS_TEXT
             }
-            it.imgFacebook.setOnClickListener { this toast getString(R.string.facebook) }
-            it.imgGooglePlus.setOnClickListener { this toast getString(R.string.google_plus) }
-            it.imgTwitter.setOnClickListener { this toast getString(R.string.twitter) }
-            it.txtForgotPassword.setOnClickListener { this toast getString(R.string.forgot_password) }
-            it.cbRemember.setOnClickListener { this toast getString(R.string.remember_me) }
+            imgFacebook.setOnClickListener { activity toast getString(R.string.facebook) }
+            imgGooglePlus.setOnClickListener { activity toast getString(R.string.google_plus) }
+            imgTwitter.setOnClickListener { activity toast getString(R.string.twitter) }
+            txtForgotPassword.setOnClickListener { activity toast getString(R.string.forgot_password) }
+            cbRemember.setOnClickListener { activity toast getString(R.string.remember_me) }
         }
+
     }
 
     private fun signIn() {

@@ -19,11 +19,11 @@ class SignUpActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
-        binding.also {
-            it.btnSignUp.setOnClickListener { signUp() }
-            it.email.addTextChangedListener {
-                if (validEmail(binding.email.text.toString())) {
-                    binding.imgCheckEmail.visibility
+        with(binding) {
+            btnSignUp.setOnClickListener { signUp() }
+            email.addTextChangedListener {
+                if (validEmail(this.email.text.toString())) {
+                    this.imgCheckEmail.visibility
                 }
             }
         }
@@ -35,10 +35,10 @@ class SignUpActivity : AppCompatActivity() {
         val account = binding.account.text.toString()
         val email = binding.email.text.toString()
         val password = binding.passwordTop.text.toString()
-        roomEntity.also {
-            it.account = account
-            it.email = email
-            it.password = password
+        with(roomEntity) {
+            this.account = account
+            this.email = email
+            this.password = password
         }
         if (account.isNotEmpty() &&
             binding.passwordTop.text.toString() ==
