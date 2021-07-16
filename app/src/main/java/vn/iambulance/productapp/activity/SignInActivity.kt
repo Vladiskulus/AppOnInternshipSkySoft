@@ -1,5 +1,6 @@
 package vn.iambulance.productapp.activity
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -7,15 +8,16 @@ import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
 
-abstract class SignInActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var viewModel: MyViewModel
-    abstract val activity: SignInActivity
+    private lateinit var activity: SignInActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
+        activity = this
         val view = binding.root
         setContentView(view)
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
@@ -28,11 +30,10 @@ abstract class SignInActivity : AppCompatActivity() {
             }
             imgFacebook.setOnClickListener { activity toast getString(R.string.facebook) }
             imgGooglePlus.setOnClickListener { activity toast getString(R.string.google_plus) }
-            imgTwitter.setOnClickListener { activity toast getString(R.string.twitter) }
-            txtForgotPassword.setOnClickListener { activity toast getString(R.string.forgot_password) }
-            cbRemember.setOnClickListener { activity toast getString(R.string.remember_me) }
+            imgTwitter.setOnClickListener { activity  toast getString(R.string.twitter) }
+            txtForgotPassword.setOnClickListener { activity  toast getString(R.string.forgot_password) }
+            cbRemember.setOnClickListener { activity  toast getString(R.string.remember_me) }
         }
-
     }
 
     private fun signIn() {

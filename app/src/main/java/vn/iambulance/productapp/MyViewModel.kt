@@ -2,9 +2,7 @@ package vn.iambulance.productapp
 
 import android.app.Application
 import androidx.lifecycle.*
-import vn.iambulance.productapp.room.RoomDAO
-import vn.iambulance.productapp.room.RoomDB
-import vn.iambulance.productapp.room.RoomEntity
+import vn.iambulance.productapp.room.*
 
 class MyViewModel(app: Application) : AndroidViewModel(app) {
 
