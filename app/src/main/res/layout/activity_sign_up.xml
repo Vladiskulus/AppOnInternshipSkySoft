@@ -11,17 +11,14 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
         android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/account"
@@ -35,11 +32,10 @@
         android:padding="15dp"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/img_check_account"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/img_check_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <ImageView
         android:id="@+id/img_check_account"
@@ -47,18 +43,17 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
         android:background="@drawable/img_card"
-        android:contentDescription="@string/todo"
         android:padding="15dp"
         android:src="@drawable/check"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/account"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="@+id/account" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="40dp"
         android:background="@drawable/card"
         android:backgroundTint="@color/card"
@@ -67,11 +62,9 @@
         android:padding="15dp"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/img_check_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/account"/>
 
     <ImageView
         android:id="@+id/img_check_email"
@@ -82,10 +75,9 @@
         android:contentDescription="@string/todo"
         android:padding="15dp"
         android:src="@drawable/check"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_check_account"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="@+id/email" />
 
     <EditText
         android:id="@+id/password_top"
@@ -99,11 +91,10 @@
         android:padding="15dp"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toStartOf="@+id/img_visibility_password_top"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <ImageView
         android:id="@+id/img_visibility_password_top"
@@ -114,10 +105,9 @@
         android:contentDescription="@string/todo"
         android:padding="15dp"
         android:src="@drawable/eye_off"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/password_top"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_check_email"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toTopOf="@+id/password_top" />
 
     <EditText
         android:id="@+id/password_bottom"
@@ -131,12 +121,10 @@
         android:padding="15dp"
         android:textColor="@color/text"
         android:textColorHint="@color/text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toStartOf="@+id/img_visibility_password_bottom"
-        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_top"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toBottomOf="@+id/password_top" />
 
     <ImageView
         android:id="@+id/img_visibility_password_bottom"
@@ -147,10 +135,9 @@
         android:contentDescription="@string/todo"
         android:padding="15dp"
         android:src="@drawable/eye_off"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/password_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_visibility_password_top"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toTopOf="@+id/password_bottom"/>
 
     <CheckBox
         android:id="@+id/cb_remember"
@@ -163,26 +150,24 @@
         android:text="@string/privacy"
         android:textColor="@color/text"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_bottom"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/password_bottom"/>
 
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/test_button"
         android:text="@string/sign_up"
         android:textColor="@color/text"
         app:backgroundTint="#FFFFFF"
         app:backgroundTintMode="multiply"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_bottom"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/cb_remember" />
 
     <TextView
         android:id="@+id/textView"
@@ -192,12 +177,10 @@
         android:text="@string/go_to_login"
         android:textAlignment="textEnd"
         android:textColor="@color/text"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txt_create_new"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
-        app:layout_constraintVertical_bias="0.903" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/txt_create_new"
@@ -208,9 +191,8 @@
         android:text="@string/sign_in"
         android:textAlignment="center"
         android:textColor="@color/button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
-        app:layout_constraintVertical_bias="0.903" />
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

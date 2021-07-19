@@ -10,14 +10,14 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private lateinit var dao: RoomDAO
 
-    fun singUp(account:String?, email: String?, passwordTop: String?, passwordBottom: String?) {
+    fun singUp(account: String?, email: String?, passwordTop: String?, passwordBottom: String?) {
         val entity = RoomEntity()
         entity.email = email
         entity.password = passwordTop
-        dao = RoomDB.getData(app)?.roomDao()!!
-        if (account !==null) {
+        dao = RoomDB.getData(app).roomDao()
+        if (account !== null) {
             if (passwordBottom == passwordTop) {
-                if (validEmail(email) && validPassword(passwordTop)){
+                if (validEmail(email) && validPassword(passwordTop)) {
                     if (dao.signIn(entity.email, entity.password) == null) {
                         dao.signUp(entity)
                         vmStatus.value = app.getString(R.string.success)
@@ -37,19 +37,19 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
         }
     }
 
-    fun singIn(email: String?, password: String?){
-        dao = RoomDB.getData(app)?.roomDao()!!
-        if (validEmail(email) && validPassword(password)){
-            if (dao.signIn(email, password) !== null){
+    fun singIn(email: String?, password: String?) {
+        dao = RoomDB.getData(app).roomDao()
+        if (validEmail(email) && validPassword(password)) {
+            if (dao.signIn(email, password) !== null) {
                 vmStatus.value = app.getString(R.string.success)
-            } else if (dao.checkEmail(email) == null){
+            } else if (dao.checkEmail(email) == null) {
                 vmStatus.value = app.getString(R.string.unreg_email)
-            } else if (dao.checkEmail(email) !==null && dao.signIn(email, password) == null){
+            } else if (dao.checkEmail(email) !== null && dao.signIn(email, password) == null) {
                 vmStatus.value = app.getString(R.string.incorrect_password)
             }
-        } else if (!validEmail(email)){
+        } else if (!validEmail(email)) {
             vmStatus.value = app.getString(R.string.incorrect_email)
-        } else if (!validPassword(password)){
+        } else if (!validPassword(password)) {
             vmStatus.value = app.getString(R.string.incorrect_password)
         }
     }
