@@ -76,23 +76,23 @@ class SignUpActivity : AppCompatActivity() {
         }
         viewModel.vmStatus.observe(activity, {
             when (it) {
-                getString(R.string.success) -> {
+                StatusEnum.SUCCESS.status -> {
                     activity nextActivity MainActivity::class.java
                 }
-                getString(R.string.both_password_error) -> {
-                    activity toast it
+                StatusEnum.PASSWORD_DO_NOT_MATCH.status -> {
+                    activity toast getString(R.string.both_password_error)
                 }
-                getString(R.string.error) -> {
+                StatusEnum.EMAIL_REGISTERED.status -> {
                     activity toast getString(R.string.reg_email)
                 }
-                getString(R.string.incorrect_email) -> {
-                    activity toast it
+                StatusEnum.EMAIL_WRONG.status -> {
+                    activity toast  getString(R.string.incorrect_email)
                 }
-                getString(R.string.incorrect_password) -> {
-                    activity toast it
+                StatusEnum.PASSWORD_WRONG.status -> {
+                    activity toast getString(R.string.incorrect_password)
                 }
-                getString(R.string.account_error) -> {
-                    activity toast it
+                StatusEnum.ACCOUNT_ERROR.status -> {
+                    activity toast getString(R.string.account_error)
                 }
             }
         })

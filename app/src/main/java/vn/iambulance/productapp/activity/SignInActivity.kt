@@ -37,17 +37,17 @@ class SignInActivity : AppCompatActivity() {
         }
         viewModel.vmStatus.observe(this, {
             when (it) {
-                getString(R.string.success) -> {
+                StatusEnum.SUCCESS.status -> {
                     activity nextActivity MainActivity::class.java
                 }
-                getString(R.string.unreg_email) -> {
-                    activity toast it
+                StatusEnum.EMAIL_NOT_REGISTERED.status -> {
+                    activity toast getString(R.string.unreg_email)
                 }
-                getString(R.string.incorrect_email) -> {
-                    activity toast it
+                StatusEnum.EMAIL_WRONG.status -> {
+                    activity toast getString(R.string.incorrect_email)
                 }
-                getString(R.string.incorrect_password) -> {
-                    activity toast it
+                StatusEnum.PASSWORD_WRONG.status -> {
+                    activity toast getString(R.string.incorrect_password)
                 }
             }
         })

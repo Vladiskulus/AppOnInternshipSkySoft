@@ -20,20 +20,20 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
                 if (validEmail(email) && validPassword(passwordTop)) {
                     if (dao.signIn(entity.email, entity.password) == null) {
                         dao.signUp(entity)
-                        vmStatus.value = app.getString(R.string.success)
+                        vmStatus.value = StatusEnum.SUCCESS.status
                     } else if (dao.checkEmail(email) !== null) {
-                        vmStatus.value = app.getString(R.string.error)
+                        vmStatus.value = StatusEnum.EMAIL_REGISTERED.status
                     }
                 } else if (!validEmail(email)) {
-                    vmStatus.value = app.getString(R.string.incorrect_email)
+                    vmStatus.value = StatusEnum.EMAIL_WRONG.status
                 } else if (!validPassword(passwordTop)) {
-                    vmStatus.value = app.getString(R.string.incorrect_password)
+                    vmStatus.value = StatusEnum.PASSWORD_WRONG.status
                 }
             } else {
-                vmStatus.value = app.getString(R.string.both_password_error)
+                vmStatus.value = StatusEnum.PASSWORD_DO_NOT_MATCH.status
             }
         } else {
-            vmStatus.value = app.getString(R.string.account_error)
+            vmStatus.value = StatusEnum.ACCOUNT_ERROR.status
         }
     }
 
@@ -41,16 +41,16 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
         dao = RoomDB.getData(app).roomDao()
         if (validEmail(email) && validPassword(password)) {
             if (dao.signIn(email, password) !== null) {
-                vmStatus.value = app.getString(R.string.success)
+                vmStatus.value = StatusEnum.SUCCESS.status
             } else if (dao.checkEmail(email) == null) {
-                vmStatus.value = app.getString(R.string.unreg_email)
+                vmStatus.value = StatusEnum.EMAIL_NOT_REGISTERED.status
             } else if (dao.checkEmail(email) !== null && dao.signIn(email, password) == null) {
-                vmStatus.value = app.getString(R.string.incorrect_password)
+                vmStatus.value = StatusEnum.PASSWORD_WRONG.status
             }
         } else if (!validEmail(email)) {
-            vmStatus.value = app.getString(R.string.incorrect_email)
+            vmStatus.value = StatusEnum.EMAIL_WRONG.status
         } else if (!validPassword(password)) {
-            vmStatus.value = app.getString(R.string.incorrect_password)
+            vmStatus.value = StatusEnum.PASSWORD_WRONG.status
         }
     }
 }
