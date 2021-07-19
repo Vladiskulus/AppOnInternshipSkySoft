@@ -1,9 +1,9 @@
 package vn.iambulance.productapp.activity
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
@@ -16,6 +16,7 @@ class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivitySignInBinding.inflate(layoutInflater)
         activity = this
         val view = binding.root
@@ -30,22 +31,31 @@ class SignInActivity : AppCompatActivity() {
             }
             imgFacebook.setOnClickListener { activity toast getString(R.string.facebook) }
             imgGooglePlus.setOnClickListener { activity toast getString(R.string.google_plus) }
-            imgTwitter.setOnClickListener { activity  toast getString(R.string.twitter) }
-            txtForgotPassword.setOnClickListener { activity  toast getString(R.string.forgot_password) }
-            cbRemember.setOnClickListener { activity  toast getString(R.string.remember_me) }
+            imgTwitter.setOnClickListener { activity toast getString(R.string.twitter) }
+            txtForgotPassword.setOnClickListener { activity toast getString(R.string.forgot_password) }
+            cbRemember.setOnClickListener { activity toast getString(R.string.remember_me) }
         }
+        viewModel.vmStatus.observe(this, {
+            when (it) {
+                getString(R.string.success) -> {
+                    activity nextActivity MainActivity::class.java
+                }
+                getString(R.string.unreg_email) -> {
+                    activity toast it
+                }
+                getString(R.string.incorrect_email) -> {
+                    activity toast it
+                }
+                getString(R.string.incorrect_password) -> {
+                    activity toast it
+                }
+            }
+        })
     }
 
     private fun signIn() {
-        val emailText = binding.email.text.toString()
-        val passwordText = binding.password.text.toString()
-        viewModel.singIn(emailText, passwordText)
-        if (validEmail(emailText) && validPassword(passwordText)) {
-            this nextActivity MainActivity::class.java
-        } else if (!validEmail(emailText)) {
-            this toast getString(R.string.incorrect_email)
-        } else if (!validPassword(passwordText)) {
-            this toast getString(R.string.incorrect_password)
-        }
+        val email = binding.email.text.toString()
+        val password = binding.password.text.toString()
+        viewModel.singIn(email, password)
     }
 }

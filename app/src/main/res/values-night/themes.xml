@@ -1,4 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
+    <style name="Splash" parent="Theme.ProductApp">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.ProductApp</item>
+    </style>
     <!-- Base application theme. -->
     <style name="Theme.ProductApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
