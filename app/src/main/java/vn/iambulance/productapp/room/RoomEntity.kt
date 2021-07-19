@@ -7,14 +7,14 @@ import vn.iambulance.productapp.*
 class RoomEntity {
 
     @PrimaryKey(autoGenerate = true)
-    var id:Int? = null
+    var id: Int? = null
 
     @ColumnInfo(name = eAccount)
-    var account:String? = null
+    var account: String? = null
 
     @ColumnInfo(name = eMail)
-    var email:String? = null
+    var email: String? = null
 
     @ColumnInfo(name = ePassword)
-    var password:String? = null
+    var password: String? = null
 }

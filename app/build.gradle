@@ -12,7 +12,7 @@ android {
     }
     defaultConfig {
         applicationId "vn.iambulance.productapp"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion("S")
         versionCode 1
         versionName "1.0"

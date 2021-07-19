@@ -11,4 +11,7 @@ interface RoomDAO {
     @Query("SELECT * FROM users WHERE email=(:email) AND password=(:password)")
     fun signIn(email: String?, password: String?): RoomEntity?
 
+    @Query("SELECT * FROM users WHERE email=(:email)")
+    fun checkEmail(email: String?): RoomEntity?
+
 }
