@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.*
 import vn.iambulance.productapp.room.*
 
-
 class MyViewModel(private val app: Application) : AndroidViewModel(app) {
 
     val vmStatus = MutableLiveData<String>()

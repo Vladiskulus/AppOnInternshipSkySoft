@@ -1,12 +1,9 @@
 package vn.iambulance.productapp.activity
 
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputType
-import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
