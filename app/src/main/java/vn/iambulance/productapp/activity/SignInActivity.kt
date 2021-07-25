@@ -38,7 +38,7 @@ class SignInActivity : AppCompatActivity() {
         viewModel.vmStatus.observe(this, {
             when (it) {
                 StatusEnum.SUCCESS.status -> {
-                    activity nextActivity MainActivity::class.java
+                    activity nextActivity MapsActivity::class.java
                 }
                 StatusEnum.EMAIL_NOT_REGISTERED.status -> {
                     activity toast getString(R.string.unreg_email)

@@ -77,7 +77,7 @@ class SignUpActivity : AppCompatActivity() {
         viewModel.vmStatus.observe(activity, {
             when (it) {
                 StatusEnum.SUCCESS.status -> {
-                    activity nextActivity MainActivity::class.java
+                    activity nextActivity MapsActivity::class.java
                 }
                 StatusEnum.PASSWORD_DO_NOT_MATCH.status -> {
                     activity toast getString(R.string.both_password_error)
