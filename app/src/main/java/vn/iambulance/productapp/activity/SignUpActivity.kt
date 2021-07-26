@@ -86,7 +86,7 @@ class SignUpActivity : AppCompatActivity() {
                     activity toast getString(R.string.reg_email)
                 }
                 StatusEnum.EMAIL_WRONG.status -> {
-                    activity toast  getString(R.string.incorrect_email)
+                    activity toast getString(R.string.incorrect_email)
                 }
                 StatusEnum.PASSWORD_WRONG.status -> {
                     activity toast getString(R.string.incorrect_password)

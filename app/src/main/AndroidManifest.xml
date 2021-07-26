@@ -36,9 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MapsActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
     </application>
 
 </manifest>

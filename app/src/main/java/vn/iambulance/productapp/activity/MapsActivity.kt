@@ -43,6 +43,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+        getDeviceLocation()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -55,23 +56,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(map: GoogleMap) {
         this.map = map
-        this.map?.setInfoWindowAdapter(object : InfoWindowAdapter {
-            override fun getInfoWindow(arg0: Marker): View? {
-                return null
-            }
-
-            override fun getInfoContents(marker: Marker): View {
-                val infoWindow = layoutInflater.inflate(
-                    R.layout.custom_info_contents,
-                    findViewById<FrameLayout>(R.id.map), false
-                )
-                val title = infoWindow.findViewById<TextView>(R.id.title)
-                title.text = marker.title
-                val snippet = infoWindow.findViewById<TextView>(R.id.snippet)
-                snippet.text = marker.snippet
-                return infoWindow
-            }
-        })
         getLocationPermission()
         updateLocationUI()
         getDeviceLocation()
@@ -83,7 +67,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val locationResult = fusedLocationProviderClient.lastLocation
                 locationResult.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Set the map's camera position to the current location of the device.
                         lastKnownLocation = task.result
                         if (lastKnownLocation != null) {
                             map?.moveCamera(
@@ -94,7 +77,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                                     ), DEFAULT_ZOOM.toFloat()
                                 )
                             )
-                            Log.d(TAG, lastKnownLocation!!.latitude.toString() + " and " + lastKnownLocation!!.longitude.toString())
                         }
                     } else {
                         Log.d(TAG, "Current location is null. Using defaults.")

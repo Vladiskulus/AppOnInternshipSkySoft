@@ -1,6 +1,6 @@
 package vn.iambulance.productapp
 
-enum class StatusEnum(var status:String) {
+enum class StatusEnum(var status: String) {
     SUCCESS("SUCCESS"),
     EMAIL_WRONG("Incorrect Email input"),
     EMAIL_NOT_REGISTERED("eMail is not registered"),
