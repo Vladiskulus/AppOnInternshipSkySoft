@@ -7,8 +7,9 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
+import vn.iambulance.productapp.MyViewModel
 
-class SignInActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity(R.layout.activity_sign_in) {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var viewModel: MyViewModel

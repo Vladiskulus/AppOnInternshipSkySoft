@@ -10,8 +10,9 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignUpBinding
+import vn.iambulance.productapp.MyViewModel
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity(R.layout.activity_sign_up) {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var viewModel: MyViewModel
