@@ -21,13 +21,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var locationPermissionGranted = false
     private var lastKnownLocation: Location? = null
     private lateinit var viewModel: MyViewModel
-    private val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()){
-        if (it) {
-            locationPermissionGranted = true
-            updateLocationUI()
-            viewModel.vmPermission.value = true
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            if (it) {
+                locationPermissionGranted = true
+                updateLocationUI()
+                viewModel.vmPermission.value = true
+            }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

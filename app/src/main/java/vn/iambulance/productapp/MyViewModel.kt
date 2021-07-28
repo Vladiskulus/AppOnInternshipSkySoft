@@ -62,7 +62,11 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
         }
     }
 
-    fun getDeviceLocation(permission: Boolean, map: GoogleMap?, fusedLocationProviderClient: FusedLocationProviderClient) {
+    fun getDeviceLocation(
+        permission: Boolean,
+        map: GoogleMap?,
+        fusedLocationProviderClient: FusedLocationProviderClient
+    ) {
         try {
             if (permission) {
                 val locationResult = fusedLocationProviderClient.lastLocation
@@ -81,7 +85,9 @@ class MyViewModel(private val app: Application) : AndroidViewModel(app) {
                         }
                     } else {
                         map?.moveCamera(
-                            CameraUpdateFactory.newLatLngZoom(LatLng(-33.8523341, 151.2106085), 15f)
+                            CameraUpdateFactory.newLatLngZoom(
+                                LatLng(-33.8523341, 151.2106085), 15f
+                            )
                         )
                         map?.uiSettings?.isMyLocationButtonEnabled = false
                     }
