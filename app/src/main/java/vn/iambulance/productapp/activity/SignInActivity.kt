@@ -7,9 +7,9 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignInBinding
-import vn.iambulance.productapp.MyViewModel
+import vn.iambulance.productapp.view_model.MyViewModel
 
-class SignInActivity : AppCompatActivity(R.layout.activity_sign_in) {
+class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var viewModel: MyViewModel
@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity(R.layout.activity_sign_in) {
             txtForgotPassword.setOnClickListener { activity toast getString(R.string.forgot_password) }
             cbRemember.setOnClickListener { activity toast getString(R.string.remember_me) }
         }
-        viewModel.vmStatus.observe(this, {
+        viewModel.status.observe(this, {
             when (it) {
                 StatusEnum.SUCCESS.status -> {
                     activity nextActivity MapsActivity::class.java

@@ -10,9 +10,9 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import vn.iambulance.productapp.*
 import vn.iambulance.productapp.databinding.ActivitySignUpBinding
-import vn.iambulance.productapp.MyViewModel
+import vn.iambulance.productapp.view_model.MyViewModel
 
-class SignUpActivity : AppCompatActivity(R.layout.activity_sign_up) {
+class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUpBinding
     private lateinit var viewModel: MyViewModel
@@ -75,7 +75,7 @@ class SignUpActivity : AppCompatActivity(R.layout.activity_sign_up) {
                 movementMethod = LinkMovementMethod.getInstance()
             }
         }
-        viewModel.vmStatus.observe(activity, {
+        viewModel.status.observe(activity, {
             when (it) {
                 StatusEnum.SUCCESS.status -> {
                     activity nextActivity MapsActivity::class.java
